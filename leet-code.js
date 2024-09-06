@@ -18,3 +18,19 @@ const nums = [9, 13, 5, 16];
 const target = 14
 const result = twoSum(nums, target);
 console.log(result);
+
+
+// function to see if a number is a palindrome
+function isNumPalindrome (num) {
+    var strNum = num.toString();
+    var reversedNum = strNum
+    .split('')
+    .reverse()
+    .join('');
+
+    if (reversedNum === strNum) {
+        return true;
+    } else {
+        return false
+    }
+};
