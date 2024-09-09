@@ -65,3 +65,28 @@ function romanToInteger(s) {
     return value
     
 }
+
+
+// function for longest common prefix
+
+function longestCommonPrefix(strs) {
+
+    if (strs.length === 0) {
+        return ''
+    }
+
+let prefix = strs[0]
+
+ for (let i = 0; i < strs.length; i++) {
+   const currentString = strs[i]
+   while (currentString.indexOf(prefix) !== 0) {
+    prefix = prefix.substring(0, prefix.length -1);
+    if  (prefix === '') {
+        return ''
+    }
+   }
+ }
+
+ return prefix;
+
+}
