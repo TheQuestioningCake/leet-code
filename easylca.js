@@ -90,3 +90,29 @@ let prefix = strs[0]
  return prefix;
 
 }
+
+
+// function for valid parntheses
+function validParentheses (s) {
+
+    parentheses = {
+        '(': ')',
+        '{': '}',
+        '[': ']',
+    }
+
+    const parenthesesArray = []
+   
+    for (let char of s) {
+        if (parentheses[char]) {
+            parenthesesArray.push(char);
+        } else {
+            const closingParentheses = parenthesesArray.pop();
+            if (parentheses[closingParentheses] !== char) {
+                return false
+            }
+        }
+    }
+
+    return parenthesesArray.length === 0;
+}
